@@ -1,7 +1,7 @@
 // screens/AnimationProcessingPage.js
 import React, { useEffect, useRef, useState } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
-import Rive from 'rive-react-native';
+import { Button, Image, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const AnimationProcessingPage = () => {
   const riveRef = useRef(null);
@@ -22,18 +22,12 @@ const AnimationProcessingPage = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Animation Processing</Text>
-      <View style={styles.animationContainer}>
-        <Rive
-          ref={riveRef}
-          resourceName="soarus"
-          artboardName="main"
-          style={styles.animation}
-        />
-      </View>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>Animation</Text>
+      <Image source={require('../assets/animations/sourus.png')} style={styles.animationContainer}/>
+      
       <Button title="Animate" onPress={togglePlay} />
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -50,11 +44,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  animation: {
+    padding: 40,
     width: '100%',
-    height: '100%',
+    resizeMode: 'contain',
   },
+
 });
 
 export default AnimationProcessingPage;

@@ -36,11 +36,11 @@ const BottomTabNavigator = () => {
         tabBarStyle: [{ display: 'flex' }, null],
       })}
     >
-      <Tab.Screen name="Articles" component={ArticleListPage} />
-      <Tab.Screen name="Image" component={ImageProcessingPage} />
-      <Tab.Screen name="Animation" component={AnimationProcessingPage} />
-      <Tab.Screen name="Data" component={DataProcessingPage} />
-      <Tab.Screen name="Settings" component={SettingsPage} />
+      <Tab.Screen name="Articles" component={ArticleListPage} options={{ headerShown: false }}/>
+      <Tab.Screen name="Image" component={ImageProcessingPage} options={{ headerShown: false }}/>
+      <Tab.Screen name="Animation" component={AnimationProcessingPage} options={{ headerShown: false }}/>
+      <Tab.Screen name="Data" component={DataProcessingPage} options={{ headerShown: false }}/>
+      <Tab.Screen name="Settings" component={SettingsPage} options={{ headerShown: false }}/>
     </Tab.Navigator>
   );
 };

@@ -14,7 +14,7 @@ const MainStackNavigator = () => {
       <Stack.Navigator initialRouteName="DataInput">
         <Stack.Screen name="DataInput" component={DataInputScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={BottomTabNavigator} options={{ headerShown: false }} />
-        <Stack.Screen name="Article" component={ArticleScreen} options={{ headerShown: true }} />
+        <Stack.Screen name="Article" component={ArticleScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

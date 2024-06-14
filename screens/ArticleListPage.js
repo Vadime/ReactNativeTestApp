@@ -2,6 +2,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
 import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { generateArticleList } from '../utils/generateArticles';
 
 const ArticleListPage = () => {
@@ -30,7 +31,11 @@ const ArticleListPage = () => {
       data={articles}
       keyExtractor={(item, index) => index.toString()}
       renderItem={renderItem}
-      ListHeaderComponent={<Text style={styles.header}>Articles</Text>}
+      ListHeaderComponent={
+      <SafeAreaView edges={['top']}>
+              <Text style={styles.header}>Articles</Text>
+      </SafeAreaView>
+}
     />
   );
 };

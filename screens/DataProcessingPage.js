@@ -1,13 +1,14 @@
 // screens/DataProcessingPage.js
 import React, { useEffect, useState } from 'react';
 import {
-    FlatList,
-    Image,
-    StyleSheet,
-    Text,
-    TextInput,
-    View
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  View
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { generateUsers } from '../utils/generateUsers';
 
 const DataProcessingPage = () => {
@@ -56,8 +57,8 @@ const DataProcessingPage = () => {
   );
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Data Processing</Text>
+    <SafeAreaView flex={1} padding={20}>
+      <Text style={styles.title}>Data</Text>
       <View style={styles.searchContainer}>
         <TextInput
           style={styles.searchInput}
@@ -75,7 +76,7 @@ const DataProcessingPage = () => {
         keyExtractor={(item, index) => index.toString()}
         renderItem={renderUser}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

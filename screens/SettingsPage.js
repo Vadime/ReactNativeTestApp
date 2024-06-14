@@ -2,7 +2,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, SafeAreaView } from 'react-native';
 
 const SettingsPage = () => {
   const navigation = useNavigation();
@@ -16,23 +16,20 @@ const SettingsPage = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView >
+      <Text style={styles.title}>Settings</Text>
       <TouchableOpacity style={styles.listItem} onPress={handleLogout}>
         <Ionicons name="log-out-outline" size={24} color="black" />
         <Text style={styles.listItemText}>Logout</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-  },
   title: {
     fontSize: 32,
-    marginBottom: 20,
+    margin: 20,
   },
   listItem: {
     flexDirection: 'row',
@@ -40,6 +37,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
+    marginHorizontal: 20,
   },
   listItemText: {
     fontSize: 18,
